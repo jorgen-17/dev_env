@@ -250,7 +250,7 @@ local dap_config = {
 			local ui = require("dapui")
 
 			vim.keymap.set("n", "<space>b", dap.toggle_breakpoint)
-			vim.keymap.set("n", "<space>gb", dap.run_to_cursor)
+			vim.keymap.set("n", "<space>gc", dap.run_to_cursor)
 
 			-- Eval var under cursor
 			vim.keymap.set("n", "<space>?", function()
@@ -331,6 +331,26 @@ require("lazy").setup({
 		-- this is equivalent to setup({}) function
 	},
 	{ "akinsho/toggleterm.nvim", version = "*", config = true },
+	{
+		"kdheepak/lazygit.nvim",
+		lazy = true,
+		cmd = {
+			"LazyGit",
+			"LazyGitConfig",
+			"LazyGitCurrentFile",
+			"LazyGitFilter",
+			"LazyGitFilterCurrentFile",
+		},
+		-- optional for floating window border decoration
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+		-- setting the keybinding for LazyGit with 'keys' is recommended in
+		-- order to load the plugin when the command is run for the first time
+		keys = {
+			{ "<leader>g", "<cmd>LazyGit<cr>", desc = "LazyGit" },
+		},
+	},
 	dap_config,
 	--	"mfussenegger/nvim-dap",
 	--	{ "Mgenuit/nvim-dap-kotlin", config = true },
