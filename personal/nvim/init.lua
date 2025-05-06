@@ -351,6 +351,16 @@ require("lazy").setup({
 			{ "<leader>g", "<cmd>LazyGit<cr>", desc = "LazyGit" },
 		},
 	},
+	{
+		"kylechui/nvim-surround",
+		version = "^3.0.0", -- Use for stability; omit to use `main` branch for the latest features
+		event = "VeryLazy",
+		config = function()
+			require("nvim-surround").setup({
+				-- Configuration here, or leave empty to use defaults
+			})
+		end,
+	},
 	dap_config,
 	--	"mfussenegger/nvim-dap",
 	--	{ "Mgenuit/nvim-dap-kotlin", config = true },
